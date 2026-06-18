@@ -1,7 +1,20 @@
 <template>
   <div class="card group text-center">
-    <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-2xl font-bold text-white shadow-lg shadow-primary/20 transition-transform duration-300 group-hover:scale-110">
-      {{ initials }}
+    <div class="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full ring-4 ring-mint shadow-lg shadow-primary/15 transition-transform duration-300 group-hover:scale-105 dark:ring-primary/40">
+      <img
+        v-if="!imgError"
+        :src="doctorImage"
+        :alt="doctor.name"
+        class="h-full w-full object-cover object-top"
+        loading="lazy"
+        @error="imgError = true"
+      />
+      <div
+        v-else
+        class="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary to-secondary text-2xl font-bold text-white"
+      >
+        {{ initials }}
+      </div>
     </div>
     <h3 class="text-base font-bold text-primary dark:text-white">{{ doctor.name }}</h3>
     <span class="mt-2 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary dark:bg-secondary/10 dark:text-secondary">
@@ -18,13 +31,15 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { getInitials } from '@/utils/helpers'
+import { computed, ref } from 'vue'
+import { getInitials, getDoctorImage } from '@/utils/helpers'
 import { CalendarDaysIcon } from '@heroicons/vue/24/outline'
 
 const props = defineProps({
   doctor: { type: Object, required: true },
 })
 
+const imgError = ref(false)
 const initials = computed(() => getInitials(props.doctor.name))
+const doctorImage = computed(() => getDoctorImage(props.doctor))
 </script>

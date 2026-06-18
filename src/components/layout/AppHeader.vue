@@ -3,20 +3,20 @@
     class="sticky top-0 z-50 transition-all duration-300"
     :class="scrolled ? 'bg-white/95 shadow-lg backdrop-blur-md dark:bg-slate-900/95' : 'bg-transparent'"
   >
-    <div class="bg-emergency py-1.5 text-center text-xs font-medium text-white md:text-sm">
+    <div class="border-b border-mint/60 bg-white py-1.5 text-center text-xs font-medium text-primary-dark md:text-sm dark:border-primary/30 dark:bg-primary-dark dark:text-light">
       <span class="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
         <span class="inline-flex items-center gap-1">
-          <PhoneIcon class="h-4 w-4" />
+          <PhoneIcon class="h-4 w-4 text-primary" />
           Tél :
-          <a :href="`tel:${HOSPITAL.phone.replace(/\s/g, '')}`" class="underline hover:no-underline">{{ HOSPITAL.phone }}</a>
+          <a :href="`tel:${HOSPITAL.phone.replace(/\s/g, '')}`" class="font-semibold text-primary hover:underline">{{ HOSPITAL.phone }}</a>
         </span>
-        <span class="hidden sm:inline">|</span>
+        <span class="hidden text-mint sm:inline">|</span>
         <span class="inline-flex items-center gap-1">
           Ambulance :
-          <a :href="`tel:${HOSPITAL.ambulance.replace(/\s/g, '')}`" class="underline hover:no-underline">{{ HOSPITAL.ambulance }}</a>
+          <a :href="`tel:${HOSPITAL.ambulance.replace(/\s/g, '')}`" class="font-semibold text-primary hover:underline">{{ HOSPITAL.ambulance }}</a>
         </span>
-        <span class="hidden sm:inline">|</span>
-        <span>{{ HOSPITAL.availability }}</span>
+        <span class="hidden text-mint sm:inline">|</span>
+        <span class="text-primary/80">{{ HOSPITAL.availability }}</span>
       </span>
     </div>
 
