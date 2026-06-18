@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-light py-16 dark:bg-slate-800/50 md:py-20">
+  <section class="bg-mint/40 py-16 dark:bg-primary-dark/50 md:py-20">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <div class="reveal text-center">
         <h2 class="section-title">Questions Fréquentes</h2>

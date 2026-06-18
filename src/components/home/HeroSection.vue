@@ -1,15 +1,15 @@
 <template>
   <section class="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-dark py-20 text-white md:py-28">
-    <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0 opacity-20">
       <div class="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-secondary blur-3xl"></div>
-      <div class="absolute -bottom-20 -left-20 h-96 w-96 rounded-full bg-health blur-3xl"></div>
+      <div class="absolute -bottom-20 -left-20 h-96 w-96 rounded-full bg-mint blur-3xl"></div>
     </div>
 
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid items-center gap-12 lg:grid-cols-2">
         <div class="animate-fade-in">
           <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
-            <span class="h-2 w-2 animate-pulse rounded-full bg-health"></span>
+            <span class="h-2 w-2 animate-pulse rounded-full bg-secondary"></span>
             Ouvert {{ HOSPITAL.availability }}
           </span>
           <h1 class="mt-6 text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
@@ -36,14 +36,14 @@
               rel="noopener noreferrer"
               class="flex items-center gap-3 rounded-xl bg-white/10 px-4 py-3 text-sm backdrop-blur-sm transition-colors hover:bg-white/15"
             >
-              <MapPinIcon class="h-5 w-5 shrink-0 text-health" />
+              <MapPinIcon class="h-5 w-5 shrink-0 text-secondary" />
               <span>{{ HOSPITAL.address }}, {{ HOSPITAL.addressDetail }}</span>
             </a>
             <a
               :href="`tel:${HOSPITAL.phone.replace(/\s/g, '')}`"
               class="flex items-center gap-3 rounded-xl bg-white/10 px-4 py-3 text-sm backdrop-blur-sm transition-colors hover:bg-white/15"
             >
-              <PhoneIcon class="h-5 w-5 shrink-0 text-health" />
+              <PhoneIcon class="h-5 w-5 shrink-0 text-secondary" />
               <span>{{ HOSPITAL.phone }}</span>
             </a>
           </div>
